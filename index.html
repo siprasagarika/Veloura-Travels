@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veloura Travels</title>
+
+<style>
+body {margin:0;font-family:Arial;background:#fff0f5;scroll-behavior:smooth;}
+
+header {background:#800020;color:white;padding:15px;position:fixed;width:100%;top:0;z-index:1000;display:flex;justify-content:space-between;}
+nav a {color:white;margin:10px;text-decoration:none;font-weight:bold;}
+nav a:hover {color:#ffb6c1;}
+
+section {padding:90px 20px;}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veloura Travels</title>
+
+<style>
+body {margin:0;font-family:Arial;background:#fff0f5;scroll-behavior:smooth;}
+
+header {background:#800020;color:white;padding:15px;position:fixed;width:100%;top:0;z-index:1000;display:flex;justify-content:space-between;}
+nav a {color:white;margin:10px;text-decoration:none;font-weight:bold;}
+nav a:hover {color:#ffb6c1;}
+
+section {padding:90px 20px;}
+
+/* HERO SLIDESHOW */
+.hero {
+position:relative;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+overflow:hidden;
+}
+
+.hero::before {
+content:"";
+position:absolute;
+top:0;left:0;
+width:100%;height:100%;
+background-size:cover;
+background-position:center;
+animation:slideShow 18s infinite;
+z-index:-1;
+}
+
+/* slideshow images */
+@keyframes slideShow {
+0% {background-image:url('images/img1.jpg');}
+20% {background-image:url('images/img2.jpg');}
+40% {background-image:url('images/img3.jpg');}
+60% {background-image:url('images/img4.jpg');}
+80% {background-image:url('images/img5.jpg');}
+100% {background-image:url('images/img6.jpg');}
+}
+
+/* dark overlay */
+.hero::after {
+content:"";
+position:absolute;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.4);
+z-index:-1;
+}
+
+button {background:#ff4d6d;border:none;padding:10px 20px;color:white;cursor:pointer;border-radius:5px;transition:0.3s;}
+button:hover {background:#c9184a;}
+
+.cards {display:flex;flex-wrap:wrap;justify-content:center;}
+
+.card {
+background:white;margin:15px;padding:15px;width:250px;border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);text-align:center;
+opacity:0;transform:translateY(40px);transition:0.6s;
+}
+.card.show {opacity:1;transform:translateY(0);}
+
+.card img {width:100%;border-radius:10px;height:150px;object-fit:cover;}
+
+footer {background:#800020;color:white;text-align:center;padding:20px;}
+
+/* Testimonials */
+.testimonials {display:flex;flex-wrap:wrap;justify-content:center;}
+.testimonial {
+background:white;margin:15px;padding:15px;width:250px;border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+opacity:0;transform:translateY(40px);transition:0.6s;
+}
+.testimonial.show {opacity:1;transform:translateY(0);}
+.stars {color:gold;font-size:18px;margin:5px 0;}
+
+/* History */
+.history {
+max-width:900px;margin:auto;background:white;padding:20px;border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+opacity:0;transform:translateY(40px);transition:0.6s;
+}
+.history.show {opacity:1;transform:translateY(0);}
+
+/* Popup */
+.popup {display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;}
+.popup-content {background:white;padding:20px;border-radius:10px;width:300px;text-align:center;animation:pop 0.3s ease;}
+
+@keyframes pop {
+from {transform:scale(0.5);}
+to {transform:scale(1);}
+}
+
+input, textarea {width:90%;margin:10px;padding:10px;border-radius:5px;border:1px solid #ccc;}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Veloura Travels</h2>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#destinations">Destinations</a>
+<a href="#packages">Packages</a>
+<a href="#testimonials">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div>
+<h1>Discover Your Dream Destination</h1>
+<p>Luxury Travel Experiences</p>
+<button onclick="openPopup()">Book Now</button>
+</div>
+</section>
+
+<section id="about">
+<h2>About Us</h2>
+<p>Veloura Travels offers curated luxury trips with comfort and elegance.</p>
+</section>
+
+<section id="destinations">
+<h2>Top Destinations</h2>
+
+<div class="cards">
+<div class="card"><img src="images/img1.jpg"><h3>Bali</h3></div>
+<div class="card"><img src="images/img2.jpg"><h3>Paris</h3></div>
+<div class="card"><img src="images/img3.jpg"><h3>Maldives</h3></div>
+<div class="card"><img src="images/img4.jpg"><h3>Dubai</h3></div>
+<div class="card"><img src="images/img5.jpg"><h3>Switzerland</h3></div>
+<div class="card"><img src="images/img6.jpg"><h3>Goa</h3></div>
+<div class="card"><img src="images/img7.jpg"><h3>Thailand</h3></div>
+<div class="card"><img src="images/img8.jpg"><h3>Singapore</h3></div>
+<div class="card"><img src="images/img9.jpg"><h3>London</h3></div>
+<div class="card"><img src="images/img10.jpg"><h3>New York</h3></div>
+<div class="card"><img src="images/img11.jpg"><h3>Kerala</h3></div>
+<div class="card"><img src="images/img12.jpg"><h3>Manali</h3></div>
+</div>
+
+<div class="history">
+<h3>Destination Highlights</h3>
+<p>Bali is known for its volcanic mountains... Kerala is God's Own Country.</p>
+</div>
+
+</section>
+
+<section id="testimonials">
+<h2>What Our Customers Say</h2>
+
+<div class="testimonials">
+<div class="testimonial">
+<p>"Amazing experience!"</p>
+<div class="stars">★★★★★</div>
+<h4>- Riya</h4>
+</div>
+
+<div class="testimonial">
+<p>"Best travel agency!"</p>
+<div class="stars">★★★★★</div>
+<h4>- Aman</h4>
+</div>
+
+<div class="testimonial">
+<p>"Loved everything."</p>
+<div class="stars">★★★★☆</div>
+<h4>- Sneha</h4>
+</div>
+
+<div class="testimonial">
+<p>"Luxury trips!"</p>
+<div class="stars">★★★★★</div>
+<h4>- Rahul</h4>
+</div>
+</div>
+</section>
+
+<section id="packages">
+<h2>Packages</h2>
+<div class="cards">
+
+<div class="card">
+<img src="images/img1.jpg">
+<h3>Beach Escape</h3>
+<p>₹25,000</p>
+<button onclick="openPopup()">Book</button>
+</div>
+
+<div class="card">
+<img src="images/img6.jpg">
+<h3>Nature Retreat</h3>
+<p>₹18,000</p>
+<button onclick="openPopup()">Book</button>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<form onsubmit="return submitForm()">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Message"></textarea>
+<button type="submit">Send</button>
+</form>
+</section>
+
+<footer>
+<p>© 2026 Veloura Travels</p>
+</footer>
+
+<div class="popup" id="popup">
+<div class="popup-content">
+<h3>Book Your Trip</h3>
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
+<button onclick="closePopup()">Submit</button>
+</div>
+</div>
+
+<script>
+function openPopup(){document.getElementById('popup').style.display='flex';}
+function closePopup(){document.getElementById('popup').style.display='none';}
+function submitForm(){alert('Message Sent!');return false;}
+
+const elements = document.querySelectorAll('.card, .testimonial, .history');
+
+window.addEventListener('scroll', () => {
+elements.forEach(el => {
+const top = el.getBoundingClientRect().top;
+if(top < window.innerHeight - 50){
+el.classList.add('show');
+}
+});
+});
+</script>
+
+</body>
+</html>
